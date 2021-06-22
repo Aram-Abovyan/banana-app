@@ -8,12 +8,8 @@ import {
   Redirect
 } from 'react-router-dom';
 import './styles/card.scss';
-
-import { store } from './mobx/store';
-
-import Favorite from './components/pages/Favorite';
-import New from './components/pages/New';
-import Popular from './components/pages/Popular';
+import Body from './components/body';
+import VerticalNavbar from './components/vertical-navbar';
 
 function App() {
 
@@ -21,26 +17,9 @@ function App() {
     <div className="App">
       <Router>
         <Redirect exact from="/" to="favorite" />
+        <VerticalNavbar />
         <Header />
-        <Switch>
-          <Route exact path="/favorite">
-            <Favorite
-              store={store}
-            />
-          </Route>
-
-          <Route exact path="/new">
-            <New
-              store={store}
-            />
-          </Route>
-
-          <Route exact path="/popular">
-            <Popular
-              store={store}
-            />
-          </Route>
-        </Switch>
+        <Body />
       </Router>
     </div>
   );
