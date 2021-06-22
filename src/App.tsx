@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useContext } from 'react';
+import Header from './components/header';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from 'react-router-dom';
+import './styles/card.scss';
+
+import { store } from './mobx/store';
+
+import Favorite from './components/pages/Favorite';
+import New from './components/pages/New';
+import Popular from './components/pages/Popular';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Redirect exact from="/" to="favorite" />
+        <Header />
+        <Switch>
+          <Route exact path="/favorite">
+            <Favorite
+              store={store}
+            />
+          </Route>
+
+          <Route exact path="/new">
+            <New
+              store={store}
+            />
+          </Route>
+
+          <Route exact path="/popular">
+            <Popular
+              store={store}
+            />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
