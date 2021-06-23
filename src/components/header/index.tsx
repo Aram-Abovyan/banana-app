@@ -1,27 +1,17 @@
-import React from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from 'react-router-dom';
 import {observer} from 'mobx-react';
-import { useMediaQuery } from 'react-responsive';
-import '../../styles/mobile.scss';
 import '../../styles/header.scss';
 
 const Header = observer(({store}) => {
-
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 850px)'
-  });
 
   const handleClick = (currentPage) => () => {
     store.changeCurrentPage(currentPage);
   };
 
   return (
-    <div className={isDesktopOrLaptop ? 'header' : 'mobile-header'}>
+    <div className="header">
       <h1>Courses</h1>
       <ul>
         <li className={store.currentPage === 'popular' ? 'selected' : 'link'}><Link onClick={handleClick('popular')} to="/popular">Popular</Link></li>
