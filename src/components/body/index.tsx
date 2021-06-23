@@ -11,6 +11,7 @@ import Favorite from '../../components/pages/Favorite';
 import New from '../../components/pages/New';
 import Popular from '../../components/pages/Popular';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Menu1, Menu2, Menu3 } from '../pages/Menus';
 
 
 export default function Body() {
@@ -34,6 +35,24 @@ export default function Body() {
             <Route exact path="/popular">
               <Popular
                 store={store}
+              />
+            </Route>
+
+            <Route exact path="/menu1">
+              <Menu1
+                // store={store}
+              />
+            </Route>
+
+            <Route exact path="/menu2">
+              <Menu2
+                // store={store}
+              />
+            </Route>
+
+            <Route exact path="/menu3">
+              <Menu3
+                // store={store}
               />
             </Route>
           </Switch>

@@ -1,23 +1,23 @@
-import React, { createContext, useContext } from 'react';
-import Header from './components/header';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
   Redirect
 } from 'react-router-dom';
-import './styles/card.scss';
+
+import { store } from './mobx/store';
+
+import Header from './components/header';
 import Body from './components/body';
 import VerticalNavbar from './components/vertical-navbar';
-import { store } from './mobx/store';
+
+import './styles/main.scss';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Redirect exact from="/" to="favorite" />
-        <VerticalNavbar />
+        <VerticalNavbar store={store} />
         <Header store={store} />
         <Body />
       </Router>

@@ -1,5 +1,8 @@
-export const MenuItem3 = ({ selected }) => {
-  const currentColor = selected === '3' ? '#8964D7' : '#E1AA98';
+import {observer} from 'mobx-react';
+
+const MenuItem3 = observer(({ store }) => {
+  const currentColor = store.currentPage === 'menu3' ? '#8964D7' : '#E1AA98';
+
   return (
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0)">
@@ -17,4 +20,6 @@ export const MenuItem3 = ({ selected }) => {
     </defs>
     </svg>
   );
-}
+});
+
+export default MenuItem3;

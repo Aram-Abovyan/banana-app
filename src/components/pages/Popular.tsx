@@ -2,7 +2,6 @@ import Card from '../card';
 import {observer} from 'mobx-react';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-
 const Popular = observer(({ store }) => {
 
   const content = store.cards.reduce((prev, { id, url, category }) => {
@@ -18,7 +17,7 @@ const Popular = observer(({ store }) => {
         </li>)
       ]);
     }
-    
+
     return prev;
   }, []);
 

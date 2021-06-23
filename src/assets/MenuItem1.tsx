@@ -1,5 +1,11 @@
-export const MenuItem1 = ({ selected }) => {
-  const currentColor = selected === '1' ? '#8964D7' : '#E1AA98';
+import {observer} from 'mobx-react';
+
+interface MenuProps {
+  store: any;
+}
+
+const MenuItem1 = observer(({ store }: MenuProps) => {
+  const currentColor = store.currentPage === 'menu1' ? '#8964D7' : '#E1AA98';
 
   return (
     <svg  width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,4 +22,6 @@ export const MenuItem1 = ({ selected }) => {
       </defs>
   </svg>
   );
-}
+});
+
+export default MenuItem1;

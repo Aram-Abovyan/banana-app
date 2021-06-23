@@ -8,6 +8,7 @@ import {
 import {observer} from 'mobx-react';
 import { useMediaQuery } from 'react-responsive';
 import '../../styles/mobile.scss';
+import '../../styles/header.scss';
 
 const Header = observer(({store}) => {
 
