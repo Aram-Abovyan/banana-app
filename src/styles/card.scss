@@ -1,6 +1,7 @@
 $img-width: 200px;
 
 body {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   background-color: #FFF4EE;
@@ -90,23 +91,21 @@ a {
   left: 0;
   position: absolute;
   width: 160px;
-  height: 1002px;
+  height: 100vh;
   left: 0px;
   top: 0px;
+  z-index: 999;
 
   background: #FFE4D6;
   border-radius: 24px 0px 0px 0px;
   ul {
-    // display: flex;
-    // flex-direction: column;
     li {
       margin-top: 40%;
     }
   }
 }
 
-// .mobile-header {
-//   h1 {
-
-//   }
-// }
+#container {
+  position: relative;
+  height: 100vh;
+}

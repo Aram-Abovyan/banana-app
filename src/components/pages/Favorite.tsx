@@ -20,9 +20,11 @@ const Favorite = observer(({ store }) => {
   }, []);
 
   return (
-    <ul>
-      {content}
-    </ul>
+    <div>
+      <ul>
+        {content}
+      </ul>
+    </div>
   );
 });
 

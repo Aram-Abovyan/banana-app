@@ -1,5 +1,7 @@
 import Card from '../card';
 import {observer} from 'mobx-react';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 
 const Popular = observer(({ store }) => {
 
@@ -21,9 +23,11 @@ const Popular = observer(({ store }) => {
   }, []);
 
   return (
-    <ul>
-      {content}
-    </ul>
+      <div id="container">
+        <ul>
+          {content}
+        </ul>
+      </div>
   );
 });
 
