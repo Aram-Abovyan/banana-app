@@ -10,6 +10,7 @@ import {
 import './styles/card.scss';
 import Body from './components/body';
 import VerticalNavbar from './components/vertical-navbar';
+import { store } from './mobx/store';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
       <Router>
         <Redirect exact from="/" to="favorite" />
         <VerticalNavbar />
-        <Header />
+        <Header store={store} />
         <Body />
       </Router>
     </div>
