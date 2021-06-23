@@ -13,7 +13,6 @@ import VerticalNavbar from './components/vertical-navbar';
 import { store } from './mobx/store';
 
 function App() {
-
   return (
     <div className="App">
       <Router>
